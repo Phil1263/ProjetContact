@@ -13,26 +13,24 @@
     	<h1>Liste des contacts</h1>
     	<table class="table table-bordered">
 	    	<tr>
-	    		<td>Prénom : </td>
-	    		<td>Nom : </td>
-	    		<td>Email : </td>
-	    		<td>Numéro de téléphone : </td>
-	    		<td>Supprimer : </td>
-	    		<td>Modifier : </td>
+	    		<td>Prénom</td>
+	    		<td>Nom</td>
+	    		<td>Numéro de téléphone</td>
+	    		<td>Email</td>
+	    		<td>Supprimer</td>
+	    		<td>Modifier</td>
 	    	</tr>
 	       <tr th:each="e : ${list}">
 	       		<tr>
 		      		<td th:text="${e.getFirstName()}"/>
-		      		
 		      		<td th:text="${e.getLastName()}"/>
-		      		
-		      		<td th:text="${e.getEmail()}"/>
 		      		<td th:text="${e.getNumberPhone()}"/>
+		      		<td th:text="${e.getEmail()}"/>
 		      		<td><input type="button" class="btn btn-danger" th:onclick="${e.getUrlDelete()}" value="Supprimer ce contact"/></td>
 	      			<td><input type="button" class="btn btn-warning" th:onclick="${e.getUrlModify()}"  value="Modifier un contact" /></td>
 		      	</tr>
 		      	<tr>
-	      			
+		      		
 	      		</tr>
 			</tr>
 		</table>

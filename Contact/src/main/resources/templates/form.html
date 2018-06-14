@@ -1,0 +1,44 @@
+ <html>
+	<head>
+	    <title>Ajout d'un contact</title>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+    <body>
+ 		<form class="form-horizontal" action="#" th:action="@{/index}" th:object="${contactForm}" method="post">
+            <div class="form-group">
+                 <label>Prénom:</label>
+                 <div class="col-sm-10">
+                 	<input type="text" class="form-control" placeholder="Prénom" th:field="*{firstName}"/>
+                 	<td th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">Erreur Prénom</td>
+                 </div>
+            </div>
+            <div class="form-group">
+                    <label>Nom:</label>
+                    <div class="col-sm-10">
+                    	<input type="text" class="form-control" placeholder="Nom" th:field="*{lastName}"/>
+                    	<td th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Erreur Nom</td>
+                    	</div>
+            </div>
+            <div class="form-group">
+                    <label>Numéro de téléphone:</label>
+                    <div class="col-sm-10">
+                    	<input type="text" class="form-control" placeholder="Numéro téléphone" th:field="*{numberPhone}" />
+                    	<td th:if="${#fields.hasErrors('numberPhone')}" th:errors="*{numberPhone}">Erreur Numéro de téléphone</td>
+                    </div>
+            </div>
+            <div class="form-group">
+                    <label>Email:</label>
+                    <div class="col-sm-10">
+                    	<input type="text" class="form-control" placeholder="Email" th:field="*{email}" />
+                    	<td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Erreur Email</td>
+                    </div>
+            </div>
+            <input type="hidden" th:field="*{id}"/>
+            <div class="form-group">
+    		<div class="col-sm-offset-2 col-sm-10">
+            	<button type="submit" class="btn btn-default">Valider le contact</button>
+            </div>
+ 			</div>
+        </form>
+     </body>
+</html>
